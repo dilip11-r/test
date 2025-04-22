@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOGO Offer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>YAY! It's BOGO</h2>
 
+    <div class="offer">
+      <input type="radio" name="offer" id="one" value="1" checked>
+      <label for="one">
+        <div class="tag">1 Unit</div>
+        <div class="price-info">
+          <span class="discount">50% OFF</span>
+          <span class="price">$15.00 USD</span>
+          <span class="old-price">$30.00</span>
+        </div>
+      </label>
+    </div>
+
+    <div class="offer popular">
+      <input type="radio" name="offer" id="two" value="2">
+      <label for="two">
+        <div class="tag">2 Units</div>
+        <div class="price-info">
+          <span class="discount">70% OFF</span>
+          <span class="price">$18.00 USD</span>
+          <span class="badge">MOST POPULAR</span>
+        </div>
+      </label>
+      <div class="dropdowns">
+        <select>
+          <option>Size</option>
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+        <select>
+          <option>Color</option>
+          <option>Red</option>
+          <option>Blue</option>
+          <option>Black</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="offer">
+      <input type="radio" name="offer" id="three" value="3">
+      <label for="three">
+        <div class="tag">3 Units</div>
+        <div class="price-info">
+          <span class="discount">80% OFF</span>
+          <span class="price">$24.00 USD</span>
+        </div>
+      </label>
+    </div>
+
+    <div class="footer">
+      <div>Free Delivery</div>
+      <div>Total: <span id="total-price">$15.00 USD</span></div>
+    </div>
+
+    <button class="add-to-cart">+ Add to Cart</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
