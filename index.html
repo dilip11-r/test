@@ -2,70 +2,214 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>BOGO Offer</title>
-  <link rel="stylesheet" href="style.css">
+  <title>BOGO Card Bundle</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fff7fb;
+      padding: 30px;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      color: #e6007e;
+      margin-bottom: 25px;
+      font-weight: 800;
+    }
+
+    .bundle-container {
+      max-width: 450px;
+      margin: auto;
+    }
+
+    .bundle-option {
+      border: 2px solid #f5c7dd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 16px;
+      background-color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .bundle-option.active {
+      border-color: #e6007e;
+      box-shadow: 0 0 10px rgba(230, 0, 126, 0.25);
+      transform: scale(1.02);
+    }
+
+    .bundle-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bundle-header label {
+      cursor: pointer;
+    }
+
+    .discount-tag {
+      background-color: #e6007e;
+      color: white;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+
+    .most-popular {
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      background-color: #e6007e;
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 5px;
+    }
+
+    .price-info {
+      font-weight: bold;
+    }
+
+    .extra-options {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .bundle-option.active .extra-options {
+      display: block;
+    }
+
+    select {
+      padding: 5px;
+      margin: 6px 0;
+      width: 47%;
+      margin-right: 6%;
+    }
+
+    .free-delivery {
+      text-align: center;
+      color: #e6007e;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    .add-to-cart {
+      width: 100%;
+      padding: 12px;
+      background-color: #e6007e;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+    .row-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.row-group select {
+  flex: 1;
+}
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h2>YAY! It's BOGO</h2>
 
-    <div class="offer">
-      <input type="radio" name="offer" id="one" value="1" checked>
-      <label for="one">
-        <div class="tag">1 Unit</div>
-        <div class="price-info">
-          <span class="discount">50% OFF</span>
-          <span class="price">$15.00 USD</span>
-          <span class="old-price">$30.00</span>
-        </div>
-      </label>
-    </div>
-
-    <div class="offer popular">
-      <input type="radio" name="offer" id="two" value="2">
-      <label for="two">
-        <div class="tag">2 Units</div>
-        <div class="price-info">
-          <span class="discount">70% OFF</span>
-          <span class="price">$18.00 USD</span>
-          <span class="badge">MOST POPULAR</span>
-        </div>
-      </label>
-      <div class="dropdowns">
-        <select>
-          <option>Size</option>
-          <option>Small</option>
-          <option>Medium</option>
-          <option>Large</option>
-        </select>
-        <select>
-          <option>Color</option>
-          <option>Red</option>
-          <option>Blue</option>
-          <option>Black</option>
-        </select>
+<h2>YAY! It's BOGO</h2>
+<div class="bundle-container">
+  <form id="bundleForm">
+   
+    <div class="bundle-option" data-option="1">
+      <div class="bundle-header">
+        <label>
+          <input type="radio" name="bundle" value="1" class="radio" />
+          1 Unit <span class="discount-tag">33% OFF</span>
+        </label>
+        <span class="price-info">$10.00 USD</span>
       </div>
-    </div>
-
-    <div class="offer">
-      <input type="radio" name="offer" id="three" value="3">
-      <label for="three">
-        <div class="tag">3 Units</div>
-        <div class="price-info">
-          <span class="discount">80% OFF</span>
-          <span class="price">$24.00 USD</span>
-        </div>
-      </label>
-    </div>
-
-    <div class="footer">
-      <div>Free Delivery</div>
-      <div>Total: <span id="total-price">$15.00 USD</span></div>
-    </div>
-
-    <button class="add-to-cart">+ Add to Cart</button>
+     <div class="extra-options">
+  <div class="row-group">
+    <select><option>S</option><option>M</option><option>L</option></select>
+    <select><option>Black</option><option>White</option></select>
   </div>
+  <div class="row-group">
+    <select><option>S</option><option>M</option><option>L</option></select>
+    <select><option>Black</option><option>White</option></select>
+  </div>
+</div>
+    </div>
 
-  <script src="script.js"></script>
+ 
+    <div class="bundle-option" data-option="2">
+      <div class="bundle-header">
+        <label>
+          <input type="radio" name="bundle" value="2" class="radio" />
+          2 Units <span class="discount-tag">37% OFF</span>
+        </label>
+        <span class="price-info">$18.00 USD</span>
+        <div class="most-popular">MOST POPULAR</div>
+      </div>
+   <div class="extra-options">
+  <div class="row-group">
+    <select><option>S</option><option>M</option><option>L</option></select>
+    <select><option>Black</option><option>White</option></select>
+  </div>
+  <div class="row-group">
+    <select><option>S</option><option>M</option><option>L</option></select>
+    <select><option>Black</option><option>White</option></select>
+  </div>
+</div>
+    </div>
+
+
+    <div class="bundle-option" data-option="3">
+      <div class="bundle-header">
+        <label>
+          <input type="radio" name="bundle" value="3" class="radio" />
+          3 Units <span class="discount-tag">39% OFF</span>
+        </label>
+        <span class="price-info">$24.00 USD</span>
+      </div>
+     <div class="extra-options">
+  <div class="row-group">
+    <select><option>S</option><option>M</option><option>L</option></select>
+    <select><option>Black</option><option>White</option></select>
+  </div>
+  <div class="row-group">
+    <select><option>S</option><option>M</option><option>L</option></select>
+    <select><option>Black</option><option>White</option></select>
+  </div>
+</div>
+    </div>
+
+    <div class="free-delivery">Free Delivery</div>
+    <button type="button" class="add-to-cart">+ Add to Cart</button>
+  </form>
+</div>
+
+<script>
+  const options = document.querySelectorAll('.bundle-option');
+  const radios = document.querySelectorAll('input[type="radio"][name="bundle"]');
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      options.forEach(opt => opt.classList.remove('active'));
+      radio.closest('.bundle-option').classList.add('active');
+    });
+  });
+</script>
+
 </body>
 </html>
