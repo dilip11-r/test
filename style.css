@@ -1,0 +1,119 @@
+ body {
+      font-family: 'Arial', sans-serif;
+      background: #fff7fb;
+      padding: 30px;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      color: #e6007e;
+      margin-bottom: 25px;
+      font-weight: 800;
+    }
+
+    .bundle-container {
+      max-width: 450px;
+      margin: auto;
+    }
+
+    .bundle-option {
+      border: 2px solid #f5c7dd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 16px;
+      background-color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .bundle-option.active {
+      border-color: #e6007e;
+      box-shadow: 0 0 10px rgba(230, 0, 126, 0.25);
+      transform: scale(1.02);
+    }
+
+    .bundle-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bundle-header label {
+      cursor: pointer;
+    }
+
+    .discount-tag {
+      background-color: #e6007e;
+      color: white;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+
+    .most-popular {
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      background-color: #e6007e;
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 5px;
+    }
+
+    .price-info {
+      font-weight: bold;
+    }
+
+    .extra-options {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .bundle-option.active .extra-options {
+      display: block;
+    }
+
+    select {
+      padding: 5px;
+      margin: 6px 0;
+      width: 47%;
+      margin-right: 6%;
+    }
+
+    .free-delivery {
+      text-align: center;
+      color: #e6007e;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    .add-to-cart {
+      width: 100%;
+      padding: 12px;
+      background-color: #e6007e;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+    .row-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.row-group select {
+  flex: 1;
+}
